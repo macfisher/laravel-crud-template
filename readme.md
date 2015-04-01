@@ -1,17 +1,11 @@
-## Laravel PHP Framework
+## Robot Sneaker (status)
 
-
-
-
+Robot Sneaker is intended to be a text based game. I am pushing to get some NPC objects seeded and mess around with MySQL database with Laravel Eloquent ORM. I just finished a rough draft DB migration and the next step is to create an Eloquent ORM model (Npc.php) and create a controller for simple CRUD functions.
 
 ## Official Documentation
 
-Documentation for the entire framework can be found on the [Laravel website](http://laravel.com/docs).
-
-### Contributing To Laravel
-
-**All issues and pull requests should be filed on the [laravel/framework](http://github.com/laravel/framework) repository.**
+There is no documentation at this time.
 
 ### License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
+Robot Sneaker is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
