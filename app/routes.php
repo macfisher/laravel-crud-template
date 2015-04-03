@@ -6,7 +6,4 @@
 |--------------------------------------------------------------------------
 */
 
-Route::get('/', function()
-{
-	return View::make('test');
-});
+Route::resource('npcs', 'NpcController');
