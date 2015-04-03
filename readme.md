@@ -1,6 +1,6 @@
 ## Robot Sneaker (status)
 
-Robot Sneaker is intended to be a text based game. I am pushing to get some NPC objects seeded and mess around with MySQL database with Laravel Eloquent ORM. I just finished a rough draft DB migration and the next step is to create an Eloquent ORM model (Npc.php) and create a controller for simple CRUD functions.
+Finished ORM for NPCs. Working on npcs->views for displaying NPCs in robotsneaker_db.
 
 ## Official Documentation
 
