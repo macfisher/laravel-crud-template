@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Robot Sneaker</title>
+	<title>Robot Sneaker NPCs</title>
 	
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 </head>
 
 <body>
-
+	
 <div class="container">
 <nav class="navbar navbar-inverse">
 	<div class="navbar-header">
@@ -20,7 +20,7 @@
 	</ul>	
 </nav>
 
-<h1>All the Nerds</h1>
+<h1>All NPCs</h1>
 
 <!-- Will be used to show any messages -->
 @if (Session::has('message'))
@@ -32,42 +32,38 @@
 		<tr>
 			<td>ID</td>
 			<td>Name</td>
-			<td>Email</td>
-			<td>Nerd Level</td>
-			<td>Actions</td>
+			<td>Energy</td>
+			<td>Attack</td>
+			<td>HP</td>
+			<td>Description</td>
+			<td>Status</td>
 		</tr>
 	</thead>
 	<tbody>
 	
-		@foreach ($nerds as $key => $value)
+		@foreach ($npcs as $key => $value)
 			<tr>
 				<td>{{ $value->id }}</td>
 				<td>{{ $value->name }}</td>
-				<td>{{ $value->email }}</td>
-				<td>{{ $value->nerd_level }}</td>
+				<td>{{ $value->energy }}</td>
+				<td>{{ $value->attack }}</td>
+				<td>{{ $value->hp }}</td>
+				<td>{{ $value->description }}</td>
+				<td>{{ $value->status }}</td>
 				
 				<!-- Also add 'show', 'edit', and 'delete' buttons -->
 				<td>
-					<!-- Delete nerd (uses destroy method DESTROY /nerds{id} -->
-					<!-- add this later because it is more complicated -->
-					{{ Form::open(array('url'=>'nerds/'.$value->id, 'class'=>'pull-right')) }}
+					<!-- Delete npc (uses destroy method DESTROY /npcs{id} -->
+					{{ Form::open(array('url'=>'npcs/'.$value->id, 'class'=>'pull-right')) }}
 					{{ Form::hidden('_method', 'DELETE') }}
-					{{ Form::submit('Delete this Nerd', array('class'=>'btn btn-warning')) }}
+					{{ Form::submit('Delete this NPC', array('class'=>'btn btn-warning')) }}
 					{{ Form::close() }}
 					
-					<!-- Show the nerds (uses show method found at
-						 GET /nerds/{id} -->
-					<a class="btn btn-small btn-success"
-				       href="{{ 
-				           URL::to('nerds/'.$value->id)
-				       }}">Show This Nerd</a>
+					<!-- Show the npcs (uses show method found at GET /nerds/{id} -->
+					<a class="btn btn-small btn-success" href="{{URL::to('npcs/'.$value->id)}}">Show This NPC</a>
 				   
-				   <!-- Edit this nerd (uses the edit method found
-				        at GET /nerds/{id}/edit -->
-					<a class="btn btn-small btn-success" 
-				       href="{{ 
-				           URL::to('nerds/'.$value->id.'/edit')
-				       }}">Edit this Nerd</a>
+				   <!-- Edit this npc (uses the edit method found at GET /npcs/{id}/edit -->
+					<a class="btn btn-small btn-success" href="{{URL::to('npcs/'.$value->id.'/edit')}}">Edit this NPC</a>
 		    
 		    	</td>
 			</tr>
