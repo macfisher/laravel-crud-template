@@ -16,6 +16,7 @@ class CreateNpcsTable extends Migration {
 		{
 			$table->increments('id');
 			
+			$table->string('name', 255);
 			$table->integer('energy');
 			$table->integer('attack');
 			$table->integer('hp');
