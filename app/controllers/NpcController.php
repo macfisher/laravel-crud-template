@@ -24,7 +24,8 @@ class NpcController extends \BaseController {
 	 */
 	public function create()
 	{
-		//
+		// Load the create form (app/views/npcs/create.blade.php)
+		return View::make('npcs.create');
 	}
 
 
