@@ -27,6 +27,8 @@
 	<div class="alert alert-info">{{ Session::get('message') }}</div>
 @endif
 
+<?php echo "staging test1"; ?>
+
 <table class="table table-striped table-bordered">
 	<thead>
 		<tr>
