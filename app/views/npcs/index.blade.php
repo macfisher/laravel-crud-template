@@ -1,3 +1,4 @@
 <?php
 
-echo "This is index.blade.php";
+printf("test1\n");
+printf("test2\n");
