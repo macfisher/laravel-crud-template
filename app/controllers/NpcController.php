@@ -42,8 +42,7 @@ class NpcController extends \BaseController {
 			'energy' => 'required',
 			'attack' => 'required',
 			'hp' => 'required',
-			'description' => 'required',
-			'status' => 'min:1'
+			'description' => 'required'
 		);
 		
 		$validator = Validator::make(Input::all(), $rules);
