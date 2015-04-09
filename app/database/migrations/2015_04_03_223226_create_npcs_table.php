@@ -21,7 +21,7 @@ class CreateNpcsTable extends Migration {
 			$table->integer('attack');
 			$table->integer('hp');
 			$table->string('description', 255);
-			$table->integer('status');
+			//$table->array('status');
 			
 			$table->timestamps();
 		});

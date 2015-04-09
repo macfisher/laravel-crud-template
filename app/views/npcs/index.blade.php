@@ -31,40 +31,41 @@
 <table class="table table-striped table-bordered">
 	<thead>
 		<tr>
-			<td>ID</td>
+			<!--<td>ID</td>-->
 			<td>Name</td>
 			<td>Energy</td>
 			<td>Attack</td>
 			<td>HP</td>
 			<td>Description</td>
-			<td>Status</td>
+			<td>Action</td>
+			<!--<td>Status</td>-->
 		</tr>
 	</thead>
 	<tbody>
 	
 		@foreach ($npcs as $key => $value)
 			<tr>
-				<td>{{ $value->id }}</td>
+				<!--<td>{{ $value->id }}</td>-->
 				<td>{{ $value->name }}</td>
 				<td>{{ $value->energy }}</td>
 				<td>{{ $value->attack }}</td>
 				<td>{{ $value->hp }}</td>
 				<td>{{ $value->description }}</td>
-				<td>{{ $value->status }}</td>
+				<!--<td>{{ $value->status }}</td>-->
 				
 				<!-- Also add 'show', 'edit', and 'delete' buttons -->
 				<td>
 					<!-- Delete npc (uses destroy method DESTROY /npcs{id} -->
 					{{ Form::open(array('url'=>'npcs/'.$value->id, 'class'=>'pull-right')) }}
 					{{ Form::hidden('_method', 'DELETE') }}
-					{{ Form::submit('Delete this NPC', array('class'=>'btn btn-warning')) }}
+					{{ Form::submit('Delete', array('class'=>'btn btn-warning')) }}
 					{{ Form::close() }}
 					
-					<!-- Show the npcs (uses show method found at GET /nerds/{id} -->
-					<a class="btn btn-small btn-success" href="{{URL::to('npcs/'.$value->id)}}">Show This NPC</a>
+					<!-- Show the npcs (uses show method found at GET /npcs/{id} -->
+					<a class="btn btn-small btn-success" href="{{URL::to('npcs/'.$value->id)}}">View</a>
 				   
 				   <!-- Edit this npc (uses the edit method found at GET /npcs/{id}/edit -->
-					<a class="btn btn-small btn-success" href="{{URL::to('npcs/'.$value->id.'/edit')}}">Edit this NPC</a>
+					<a class="btn btn-small btn-success" href="{{URL::to('npcs/'.$value->id.'/edit')}}">Edit</a>
 		    
 		    	</td>
 			</tr>

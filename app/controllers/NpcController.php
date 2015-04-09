@@ -36,7 +36,39 @@ class NpcController extends \BaseController {
 	 */
 	public function store()
 	{
-		//
+		//validate
+		$rules = array(
+			'name' => 'required',
+			'energy' => 'required',
+			'attack' => 'required',
+			'hp' => 'required',
+			'description' => 'required',
+			'status' => 'min:1'
+		);
+		
+		$validator = Validator::make(Input::all(), $rules);
+		
+		//process login
+		if ($validator->fails()) {
+			return Redirect::to('npcs/create')->withErrors($validator)
+				->withInput(Input::except('password'));
+		} else {
+			//store
+			$npc = new Npc;
+			
+			$npc->name        = Input::get('name');
+			$npc->energy      = Input::get('energy');
+			$npc->attack      = Input::get('attack');
+			$npc->hp          = Input::get('hp');
+			$npc->description = Input::get('description');
+			//$npc->status      = Input::get('status');
+			
+			$npc->save();
+			
+			//redirect
+			Session::flash('message', 'Successfully created NPC!');
+			return Redirect::to('npcs');
+		}
 	}
 
 

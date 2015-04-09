@@ -58,28 +58,30 @@
 </div>
 
 <!-- STATUS -->
-<div class="form-group">
+<!--<div class="form-group">
 	{{ Form::label('npc_status', 'NPC Status') }}
 	
 	{{
 		Form::select(
 			'npc_status',
-	                 array(
-	                 	'0' => 'Untouched', 
-	                 	'1' => 'Minor Injuries',
-	                 	'2' => 'Injured',
-	                 	'3' => 'Critical'
-	                 ),
-					 Input::old('npc_status'),
-					 array(
-					 	'class'=>'form-control'
-					 )
+				 array(
+					'0' => 'Select a Status',
+					'1' => 'Untouched', 
+					'2' => 'Minor Injuries',
+					'3' => 'Injured',
+					'4' => 'Critical'
+				 ),
+				 Input::old('npc_status'),
+				 array(
+					'class'=>'form-control'
+				 )
 		) 
 	}}
 	
-</div>
+</div>-->
 
 	{{ Form::submit('Create the NPC', array('class'=>'btn btn-primary')) }}
+{{ Form::close() }}
 
 </div>
 </body>		  
