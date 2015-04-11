@@ -46,6 +46,11 @@
 		{{ Form::label('hp', 'HP') }}
 		{{ Form::text('hp', null, array('class'=>'form-control')) }}
 	</div>
+	
+	<div class="form-group">
+		{{ Form::label('description', 'Description') }}
+		{{ Form::text('description', null, array('class'=>'form-control')) }}
+	</div>
 
 	{{ Form::submit('Edit the NPC',array('class'=>'btn btn-primary')) }}
 
