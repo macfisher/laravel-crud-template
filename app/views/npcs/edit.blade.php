@@ -23,7 +23,7 @@
 <h1>Edit {{ $npc->name }}</h1>
 
 <!--if there are creation errors, they will show here-->
-{{ HTML::ul($errors->all() }}
+{{ HTML::ul($errors->all()) }}
 
 {{ Form::model($npc, array('route'=>array('npcs.update',$npc->id),'method'=>'PUT')) }}
 
