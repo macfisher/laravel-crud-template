@@ -154,7 +154,13 @@ class NpcController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		//
+		//delete
+		$npc = Npc::find($id);
+		$npc->delete();
+		
+		//redirect
+		Session::flash('message', 'Successfully deleted NPC');
+		return Redirect::to('npcs');
 	}
 
 
