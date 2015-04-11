@@ -27,6 +27,7 @@
 		<p>
 			<strong>Energy: </strong>{{ $npc->energy }}<br>
 			<strong>Attack: </strong>{{ $npc->attack }}<br>
-			<strong>HP: </strong>{{ $npc->hp }}
+			<strong>HP: </strong>{{ $npc->hp }}<br>
+			<br>{{ $npc->description }}
 		</p>
 	</div>
