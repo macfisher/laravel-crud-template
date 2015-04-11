@@ -36,7 +36,7 @@
 			<td>Energy</td>
 			<td>Attack</td>
 			<td>HP</td>
-			<td>Description</td>
+			<!--<td>Description</td>-->
 			<td>Action</td>
 			<!--<td>Status</td>-->
 		</tr>
@@ -50,7 +50,7 @@
 				<td>{{ $value->energy }}</td>
 				<td>{{ $value->attack }}</td>
 				<td>{{ $value->hp }}</td>
-				<td>{{ $value->description }}</td>
+				<!--<td>{{ $value->description }}</td>-->
 				<!--<td>{{ $value->status }}</td>-->
 				
 				<!-- Also add 'show', 'edit', and 'delete' buttons -->

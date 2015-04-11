@@ -79,7 +79,11 @@ class NpcController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		//
+		//get the npc
+		$npc = Npc::find($id);
+		
+		//show the view and pass the npc to it
+		return View::make('npcs.show')->with('npc', $npc);
 	}
 
 
