@@ -31,3 +31,7 @@
 			<br>{{ $npc->description }}
 		</p>
 	</div>
+	
+</div>
+</body>
+</html>

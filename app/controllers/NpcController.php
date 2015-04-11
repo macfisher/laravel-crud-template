@@ -95,7 +95,11 @@ class NpcController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		//
+		//get the npc
+		$npc = Npc::find($id);
+		
+		//show the edit form and pass the npc
+		return View::make('npcs.edit')->with('npc', $npc);
 	}
 
 
@@ -107,7 +111,38 @@ class NpcController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		//
+		//validate
+		$rules = array(
+			'name' => 'required',
+			'energy' => 'required',
+			'attack' => 'required',
+			'hp' => 'required',
+			'description' => 'required'
+		);
+		
+		$validator = Validator::make(Input::all(), $rules);
+		
+		//process login
+		if ($validator->fails()) {
+			return Redirect::to('npcs/'.$id.'/edit')->withErrors($validator)
+				->withInput(Input::except('password'));
+		} else {
+			//store
+			$npc = Npc::find($id);
+			
+			$npc->name        = Input::get('name');
+			$npc->energy      = Input::get('energy');
+			$npc->attack      = Input::get('attack');
+			$npc->hp          = Input::get('hp');
+			$npc->description = Input::get('description');
+			//$npc->status      = Input::get('status');
+			
+			$npc->save();
+			
+			//redirect
+			Session::flash('message', 'Successfully updated NPC');
+			return Redirect::to('npcs');
+		}
 	}
 
 
