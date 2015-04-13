@@ -1,10 +1,6 @@
-## Robot Sneaker (status)
+## Robot Sneaker NPC Database
 
-Finished ORM for NPCs. Working on npcs->views for displaying NPCs in robotsneaker_db.
-
-## Official Documentation
-
-There is no documentation at this time.
+Create and manage NPCs.
 
 ### License
 
